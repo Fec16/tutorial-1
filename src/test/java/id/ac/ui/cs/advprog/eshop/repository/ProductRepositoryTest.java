@@ -68,4 +68,19 @@ public class ProductRepositoryTest {
         assertEquals(product2.getProductId(), savedProduct.getProductId());
         assertFalse(productIterator.hasNext());
     }
+
+    @Test
+    void testEditProductNonExistent() {
+        Product updatedProduct = new Product();
+        updatedProduct.setProductId("nonexistent-id");
+        updatedProduct.setProductName("Sampo Cap Bambang Baru");
+        updatedProduct.setProductQuantity(150);
+
+        assertDoesNotThrow(() -> productRepository.update("nonexistent-id", updatedProduct));
+    }
+
+    @Test
+    void testDeleteProductNonExistent() {
+        assertDoesNotThrow(() -> productRepository.delete("nonexistent-id"));
+    }
 }
