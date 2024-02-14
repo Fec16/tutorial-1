@@ -1,3 +1,7 @@
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=Fec16_tutorial-1&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=Fec16_tutorial-1)
+[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=Fec16_tutorial-1&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=Fec16_tutorial-1)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=Fec16_tutorial-1&metric=coverage)](https://sonarcloud.io/summary/new_code?id=Fec16_tutorial-1)
+
 # Tutorial 1
 
 **Nama** : **Jason Kent Winata** <br/>
