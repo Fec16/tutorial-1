@@ -1,8 +1,19 @@
 plugins {
     java
     jacoco
+    id("org.sonarqube") version "4.4.1.3373"
     id("org.springframework.boot") version "3.2.2"
     id("io.spring.dependency-management") version "1.1.4"
+}
+
+sonar {
+    properties {
+        property("sonar.projectKey", "Fec16_tutorial-1")
+        property("sonar.organization", "fec16")
+        property("sonar.host.url", "https://sonarcloud.io")
+
+        property("sonar.coverage.jacoco.xmlReportPaths", "${project.projectDir}/build/reports/jacoco/test/jacocoTestReport.xml")
+    }
 }
 
 group = "id.ac.ui.cs.advprog"
@@ -11,6 +22,10 @@ version = "0.0.1-SNAPSHOT"
 java {
     sourceCompatibility = JavaVersion.VERSION_21
     sourceCompatibility = JavaVersion.VERSION_17
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+        languageVersion = JavaLanguageVersion.of(17)
+    }
 }
 
 configurations {
@@ -64,6 +79,7 @@ tasks.register<Test>("FunctionalTest") {
 tasks.withType<Test>().configureEach {
     useJUnitPlatform()
 }
+
 tasks.test {
     filter {
         excludeTestsMatching("*FunctionalTest")
