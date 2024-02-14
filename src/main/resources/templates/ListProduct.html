@@ -16,7 +16,9 @@
         <tr>
             <th scope="col">Product Name</th>
             <th scope="col">Quantity</th>
-            <th scope="col">Id</th>
+            <th scope="col">ID</th>
+            <th scope="col">Edit</th>
+            <th scope="col">Delete</th>
         </tr>
         </thead>
         <tbody>
@@ -25,8 +27,12 @@
             <td th:text="${product.productQuantity}"></td>
             <td th:text="${product.productId}"></td>
             <td>
-                <a th:href="@{/product/edit/{id}(id=${product.getProductId()})}" class="btn btn-primary btn-sm">Edit </a>
-                <a th:href="@{/product/delete/{id}(id=${product.getProductId()})}" class="btn btn-danger btn-sm">Delete </a>
+                <a th:href="@{/product/edit/{id}(id=${product.getProductId()})}" class="btn btn-primary btn-sm">Edit</a>
+            </td>
+            <td>
+                <form th:action="@{/product/delete/{id}(id=${product.getProductId()})}" th:method="delete">
+                    <button class="btn btn-danger btn-sm" th:type="submit">Delete</button>
+                </form>
             </td>
         </tr>
         </tbody>
