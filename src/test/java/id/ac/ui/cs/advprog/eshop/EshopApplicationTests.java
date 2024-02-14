@@ -1,25 +1,25 @@
 package id.ac.ui.cs.advprog.eshop;
 
 import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.beans.factory.annotation.Autowired;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import org.springframework.boot.test.context.SpringBootTest;
 
+import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 @SpringBootTest
 class EshopApplicationTests {
 
     @Autowired
-    private EshopApplication application;
+    private EshopApplication eshopApplication;
 
     @Test
     void contextLoads() {
-        assertTrue(true, "The context loads successfully");
+        assertNotNull(eshopApplication);
     }
 
     @Test
-    void testMain() {
-        EshopApplication.main(new String[] {});
+    void mainMethodDoesNotThrowException() {
+        assertDoesNotThrow(() -> EshopApplication.main(new String[] {}));
     }
-
 }
