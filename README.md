@@ -3,6 +3,7 @@
 **Nama** : **Jason Kent Winata** <br/>
 **NPM** : **2206081313** <br/>
 
+## Modul 1
 ## Refleksi 1: Clean Code and Secure Coding
 Saya sudah mengimplementasikan dua fitur baru menggunakan Spring Boot. Setelah meninjau ulang source code, saya mengevaluasi standar penulisan kode yang telah saya pelajari dalam modul ini. Berikut adalah prinsip-prinsip penulisan clean code dan secure coding practices yang telah saya terapkan dalam kode saya:
 
@@ -18,3 +19,12 @@ Saya sudah mengimplementasikan dua fitur baru menggunakan Spring Boot. Setelah m
     - Semakin banyaknya test yang ditambahkan dapat menyebabkan keragaman pada prosedur setup dan variabel instance, yang berpotensi memerlukan variabel dan setup yang berbeda, sehingga diperlukan perbaruan pada setup baru.
     - Penambahan rangkaian tes yang baru bisa menghasilkan duplikasi kode jika variabel contohnya sama dengan rangkaian tes yang sudah ada.
     - Bisa saja beberapa nama Test Case kurang deskriptif, sehingga sulit dipahami. 
+
+## Modul 2
+1. - JUnit5 test classes and methods should have default package visibility (Intentionality)<br/>
+   Solution: Remove the 'public' modifier.
+   - Add at least one assertion to EshopApplicationTests (Adaptability)<br/>
+   Solution: Make a new test 'mainMethodDoesNotThrowException' to increase code Adaptability
+
+2. - My current CI/CD workflow implementation seems to have met the basic definition of Continuous Integration and Continuous Deployment. The CI workflows focus on testing code changes to ensure they check for code quality issues, vulnerabilities, and don't break existing features. <br/>
+   - By using GitHub workflows, the project automates CI processes such as running tests and CD processes like deployment whenever code changes are pushed to the repository. Each push triggers tests defined in the ci.yml file and code scans using SonarCloud. Once the code is deemed satisfactory, it's merged into the main branch, triggering deployment to the Koyeb platform and security checks using the scorecard.yml action. These actions collectively form an automated workflow within the Software Development Lifecycle.
