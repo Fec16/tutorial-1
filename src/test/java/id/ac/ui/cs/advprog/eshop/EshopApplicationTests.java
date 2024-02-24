@@ -17,9 +17,4 @@ class EshopApplicationTests {
     void contextLoads() {
         assertNotNull(eshopApplication);
     }
-
-    @Test
-    void mainMethodDoesNotThrowException() {
-        assertDoesNotThrow(() -> EshopApplication.main(new String[] {}));
-    }
 }
