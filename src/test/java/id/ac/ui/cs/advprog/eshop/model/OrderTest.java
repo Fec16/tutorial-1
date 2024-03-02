@@ -3,10 +3,10 @@ package id.ac.ui.cs.advprog.eshop.model;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 import java.util.ArrayList;
 import java.util.List;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 public class OrderTest {
     private List<Product> products;
@@ -42,11 +42,11 @@ public class OrderTest {
 
         assertSame(this. products, order.getProducts());
         assertEquals(2, order.getProducts().size());
-        assertEquals("Sampo Cap Bambang", order.getProducts().get(0).getProductName);
-        assertEquals("Sabun Cap Usep", order.getProducts().get(1).getProductName) ;
+        assertEquals("Sampo Cap Bambang", order.getProducts().get(0).getProductName());
+        assertEquals("Sabun Cap Usep", order.getProducts().get(1).getProductName()) ;
 
         assertEquals("13652556-012a-4c07-b546-54eb1396d79b", order.getId());
-        assertEquals(1708560000L, order.getOrderTime());
+        assertEquals(1788568000L, order.getOrderTime());
         assertEquals("Safira Sudrajat", order.getAuthor());
         assertEquals("WAITING_PAYMENT", order.getStatus());
     }
