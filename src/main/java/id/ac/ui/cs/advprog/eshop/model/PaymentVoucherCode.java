@@ -2,7 +2,7 @@ package id.ac.ui.cs.advprog.eshop.model;
 
 import java.util.Map;
 
-public class PaymentVoucherCode extends Payment{
+public class PaymentVoucherCode extends Payment {
     public PaymentVoucherCode(String id, Order order, Map<String, String> paymentData) {
         super(id, order, paymentData);
     }
@@ -15,8 +15,8 @@ public class PaymentVoucherCode extends Payment{
         }
 
         int numCharCount = 0;
-        for (int i = 0; i < voucherCode.length(); i++){
-            if (Character.isDigit(voucherCode.charAt(i))){
+        for (int i = 0; i < voucherCode.length(); i++) {
+            if (Character.isDigit(voucherCode.charAt(i))) {
                 numCharCount++;
             }
         }
