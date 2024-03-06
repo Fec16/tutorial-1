@@ -16,18 +16,6 @@ class PaymentTest {
     @BeforeEach
     void setUp() {
 
-        List<Product> products = getProducts();
-
-
-        // Setup orders
-        Order order1 = new Order("13652556-012a-4c07-b546-54eb1396d79b", products, 1708560000L, "Safira Sudrajat");
-        Order order2 = new Order("93652556-012a-4c07-b546-54eb1396d79b", products, 1708570000L, "Bambang Bambang");
-        this.orders = new ArrayList<>();
-        this.orders.add(order1);
-        this.orders.add(order2);
-    }
-
-    private static List<Product> getProducts() {
         List<Product> products = new ArrayList<>();
 
         Product product1 = new Product();
@@ -42,9 +30,16 @@ class PaymentTest {
 
         products.add(product1);
         products.add(product2);
-        return products;
-    }
 
+
+        // Setup orders
+        Order order1 = new Order("13652556-012a-4c07-b546-54eb1396d79b", products, 1708560000L, "Safira Sudrajat");
+        Order order2 = new Order("93652556-012a-4c07-b546-54eb1396d79b", products, 1708570000L, "Bambang Bambang");
+        this.orders = new ArrayList<>();
+        this.orders.add(order1);
+        this.orders.add(order2);
+    }
+    
     // Voucher Code
     @Test
     void testCreatePaymentSameOrders() {
@@ -130,7 +125,7 @@ class PaymentTest {
     @Test
     void testCreatePaymentCashOnDeliverySuccess(){
         Map<String, String> paymentData = new HashMap<>();
-        paymentData.put("address", "Jalan Anggur");
+        paymentData.put("address", "Jalan Adpro");
         paymentData.put("deliveryFee", "12000");
         Payment payment = new PaymentCashOnDelivery("6c93d3e2-b009-46ba-9d15-f03d85adc2de", this.orders.getFirst(), paymentData);
 
@@ -147,7 +142,7 @@ class PaymentTest {
     @Test
     void testCreatePaymentCashOnDeliveryRejectedMissingDeliveryFee(){
         Map<String, String> paymentData = new HashMap<>();
-        paymentData.put("address", "Jalan Anggur");
+        paymentData.put("address", "Jalan Adpro");
         Payment payment = new PaymentCashOnDelivery("6c93d3e2-b009-46ba-9d15-f03d85adc2de", this.orders.getFirst(), paymentData);
 
         assertEquals("REJECTED", payment.getStatus());
@@ -156,7 +151,7 @@ class PaymentTest {
     @Test
     void testSetStatusPaymentCashOnDeliverySuccess(){
         Map<String, String> paymentData = new HashMap<>();
-        paymentData.put("address", "Jalan Anggur");
+        paymentData.put("address", "Jalan Adpro");
         paymentData.put("deliveryFee", "12000");
         Payment payment = new PaymentCashOnDelivery("6c93d3e2-b009-46ba-9d15-f03d85adc2de", this.orders.getFirst(), paymentData);
 
@@ -166,7 +161,7 @@ class PaymentTest {
     @Test
     void testSetStatusPaymentCashOnDeliveryRejected(){
         Map<String, String> paymentData = new HashMap<>();
-        paymentData.put("address", "Jalan Anggur");
+        paymentData.put("address", "Jalan Adpro");
         paymentData.put("deliveryFee", "12000");
         Payment payment = new PaymentCashOnDelivery("6c93d3e2-b009-46ba-9d15-f03d85adc2de", this.orders.getFirst(), paymentData);
 
