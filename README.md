@@ -56,3 +56,33 @@ These are the SOLID Principles I applied to the project:
 3. Explain the disadvantages of not applying SOLID principles to your project with examples! <br>
 **Disadvantages**: Meanwhile, not following SOLID principles reduces the maintainability and readability of a codebase. 
 - For example, if there's an interface named Service containing all methods that should be in CarService and ProductService, the implementation in CarServiceImpl must implement methods like `public Product create(Product product);` that aren't used.
+
+## Modul 4
+## Refleksi
+1. Reflect based on Percival (2017) proposed self-reflective questions (in “Principles and Best Practice of Testing” submodule, chapter “Evaluating Your Testing Objectives”), whether this TDD flow is useful enough for you or not. If not, explain things that you need to do next time you make more tests. <br>
+- Correctness:
+  - Do I have enough functional tests to reassure myself that my application really works, from point of view of the user? _Yes._
+  - Am I testing all edge cases thoroughly? _Yes._
+  - Do I have tests that check whether all my components fit together properly? Could some integrated tests do this, or are functional tests enough? _Yes. Functional tests are enough, but through integrated tests it will be more thoroughly checked._
+
+- Maintainability:
+  - Are my tests giving me the confidence to refactor my code, fearlessly and frequently? _Yes._
+  - Are my tests helping me to drive out a good design? If I have a lot of integration tests but less unit tests, do I need to make more unit tests to get better feedback on my code design? _Yes. If those better feedbacks are actually helping the code design, why not?_
+
+- Production workflow:
+  - Are my feedback cycles as fast as I would like them? When do I get warned about bugs, and is there any practical way to make that happen sooner? _Yes. As of now, the feedback cycles have satisfied my expectation._
+  - Is there some way that I could write faster integration tests that would give me feedback quicker? _Regularly review and refactor tests._
+  - Can I run a subset of the full test suite when I need to? _Yes._
+  - Am I spending too much time waiting for tests to run, and thus less time in a productive flow state? _No._
+
+2. You have created unit tests in Tutorial. Now reflect whether your tests have successfully followed F.I.R.S.T. principle or not. If not, explain things that you need to do the next time you create more tests. <br>
+- I have successfully followed F.I.R.S.T principle:
+  - My tests run as soon as possible and does not interrupt my workflow.
+  - My tests are separated into unit tests and functional tests.
+  - My tests do not interfere and change function states or dependent on other test cases.
+  - My tests are consistent on repeated runs.
+  - My tests are self-validating because they have strict assertions.
+  - My tests cover all happy, unhappy paths, and all possible errors or results.
+  - I implemented dummy, mocks, setUp, and tearDown to avoid duplication and clean up objects.
+  - If my function involves calling other functions, then Test Double techniques is used. 
+
